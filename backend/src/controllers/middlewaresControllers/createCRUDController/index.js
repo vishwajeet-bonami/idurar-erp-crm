@@ -29,6 +29,10 @@ const createCRUDController = (modelName) => {
     filter: (req, res) => filter(Model, req, res),
     summary: (req, res) => summary(Model, req, res),
   };
+  // for debugging
+  if (!crudMethods.create) {
+    console.error(`Failed to initialize 'create' method for model: ${modelName}`);
+  }
   return crudMethods;
 };
 

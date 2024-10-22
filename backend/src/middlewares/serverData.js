@@ -10,3 +10,4 @@ exports.getOne = ({ model, id }) => {
   const result = Model.findOne({ _id: id, removed: false });
   return result;
 };
+

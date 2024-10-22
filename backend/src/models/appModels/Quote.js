@@ -1,3 +1,4 @@
+const { type } = require('@/locale/translation/en_us');
 const mongoose = require('mongoose');
 
 const quoteSchema = new mongoose.Schema({
@@ -32,6 +33,12 @@ const quoteSchema = new mongoose.Schema({
   client: {
     type: mongoose.Schema.ObjectId,
     ref: 'Client',
+    required: true,
+    autopopulate: true,
+  },
+  vendor: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'Vendor',
     required: true,
     autopopulate: true,
   },

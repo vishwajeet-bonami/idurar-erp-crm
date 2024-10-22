@@ -4,7 +4,10 @@ const cors = require('cors');
 const compression = require('compression');
 
 const cookieParser = require('cookie-parser');
+// const session = require('express-session');
+// const passport = require('passport');
 
+// const loginOauthRouter = require('./controllers/middlewaresControllers/createAuthMiddleware/loginOauth.js');
 const coreAuthRouter = require('./routes/coreRoutes/coreAuth');
 const coreApiRouter = require('./routes/coreRoutes/coreApi');
 const coreDownloadRouter = require('./routes/coreRoutes/coreDownloadRouter');
@@ -17,6 +20,17 @@ const erpApiRouter = require('./routes/appRoutes/appApi');
 const fileUpload = require('express-fileupload');
 // create our Express app
 const app = express();
+
+
+// app.use(
+//   session({
+//     secret: 'your_secret_key', // Use a strong secret in production
+//     resave: false,
+//     saveUninitialized: true,
+//   })
+// );
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 app.use(
   cors({

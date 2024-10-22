@@ -6,7 +6,9 @@ const appControllers = require('@/controllers/appControllers');
 const { routesList } = require('@/models/utils');
 
 const routerApp = (entity, controller) => {
+  console.log(`Registering routes for entity: ${entity}`);
   router.route(`/${entity}/create`).post(catchErrors(controller['create']));
+  console.log(`POST /${entity}/create route registered and`, JSON.stringify(controller['create']));
   router.route(`/${entity}/read/:id`).get(catchErrors(controller['read']));
   router.route(`/${entity}/update/:id`).patch(catchErrors(controller['update']));
   router.route(`/${entity}/delete/:id`).delete(catchErrors(controller['delete']));

@@ -12,4 +12,5 @@ router.route('/resetpassword').post(catchErrors(adminAuth.resetPassword));
 
 router.route('/logout').post(adminAuth.isValidAuthToken, catchErrors(adminAuth.logout));
 
+
 module.exports = router;
